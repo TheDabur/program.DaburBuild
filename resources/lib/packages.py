@@ -14,7 +14,7 @@ sysaddon = sys.argv[0]
 
 class packages:
     def __init__(self):
-        self.pack_url = 'https://raw.githubusercontent.com/TheDabur/DBuild/master/packages.json'
+        self.pack_url = 'https://raw.githubusercontent.com/TheDabur/packages/master/packages.json'
         json_data = urlopen(self.pack_url)
         self.data = loads(json_data.read())
 

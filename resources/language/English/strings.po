@@ -46,3 +46,15 @@ msgstr "Error. Server is unavailable!"
 msgctxt "#30021"
 msgid "Oops, it's seems like something is wrong!"
 msgstr "Oops, it's seems like something is wrong!"
+
+msgctxt "#30030"
+msgid "Are you sure?"
+msgstr "Are you sure?"
+
+msgctxt "#30031"
+msgid "Yes"
+msgstr "Yes"
+
+msgctxt "#30032"
+msgid "No"
+msgstr "No"

@@ -46,3 +46,15 @@ msgstr "שגיאה. השרת אינו זמין!"
 msgctxt "#30021"
 msgid "Oops, it's seems like something is wrong!"
 msgstr "אופס! נראה שיש לי תקלה"
+
+msgctxt "#30030"
+msgid "Are you sure?"
+msgstr "האם את/ה בטוח/ה?"
+
+msgctxt "#30031"
+msgid "Yes"
+msgstr "כן"
+
+msgctxt "#30032"
+msgid "No"
+msgstr "לא"

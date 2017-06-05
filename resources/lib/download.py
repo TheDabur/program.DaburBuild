@@ -113,7 +113,7 @@ class download:
             if k != "lookandfeel.skin":  # We already set this above if exists
                 rpc.run("Settings.SetSettingValue", {"setting": k, "value": v})
 
-        sleep(2)
+        sleep(4)
         control.execute('ReloadSkin')
         control.execute('UpdateAddonRepos')
         control.execute('UpdateLibrary(video)')

@@ -27,7 +27,10 @@ if action is None:
 elif action == 'download' or action == "update":
     from resources.lib import download, control
 
-    sure = control.yesnoDialog(control.lang(30030), "", "", control.addonInfo('name'), control.lang(30032), control.lang(30031))
+    sure = True
+    if action == 'download':
+        sure = control.yesnoDialog(control.lang(30030), "", "", control.addonInfo('name'), control.lang(30032), control.lang(30031))
+
     if sure:
         download.download().run(action, package_id)
 

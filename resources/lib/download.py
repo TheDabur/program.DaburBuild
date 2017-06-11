@@ -40,7 +40,7 @@ class download:
         package_addons = set(package['addons'])  # list of addons belong to package
         package_zips = package['zip']
 
-        current_addons = conf.getAddons()  # current addons exists in config.ini
+        current_addons = conf.getAddons()  # current addons exists in config.json
         try:
             installed_addons = set([a['addonid'] for a in rpc.run("Addons.GetAddons")['result']['addons']
                                     if not a['addonid'].startswith('skin.')])
@@ -59,7 +59,7 @@ class download:
         dp = control.progressDialog
         dp.create(control.addonName())
 
-        inst = installer.Installer(control.addonInfo('id'), dp, control.lang(30005))
+        inst = installer.Installer(control.addonInfo('id'), packages_instance.getRepos(), dp, control.lang(30005))
         inst.clear_all(sorted(addons_to_remove))
 
         index = 1

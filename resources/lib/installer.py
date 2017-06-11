@@ -19,21 +19,19 @@ chunk_size = 1024 * 8
 
 
 class Installer:
-    repos = ["http://mirror.nl.leaseweb.net/xbmc/addons/krypton/",
-             "https://raw.githubusercontent.com/kodil/kodil/master/",
-             "https://raw.githubusercontent.com/cubicle-vdo/xbmc-israel/master/"]
 
-    def __init__(self, addon_id, progress, lbl):
+    def __init__(self, addon_id, repos, progress, lbl):
         self.addon_id = addon_id
+        self.repos = repos
         self.dp = progress
         self.repo_addons = {}
         self.versions = {}
         self.packages = set([])
 
         count = len(self.repos)
-        for index, name in enumerate(self.repos, 1):
+        for index, repo in enumerate(self.repos, 1):
             self.dp.update(int(100.0 * index / count), lbl.format(index, count))
-            self.get_repo_info(name)
+            self.get_repo_info(repo)
 
     def clear_all(self, packages=[]):
         # disable all requested packages before removal
@@ -49,17 +47,15 @@ class Installer:
                 rmtree(path.join(dest, p), True)
 
     def get_repo_info(self, repo):
-        self.log('getting repo info {0}'.format(repo))
+        self.log('getting repo info {0}'.format(repo['info']))
 
         try:
-            r = urlopen(repo + "addons.xml")
+            r = urlopen(repo['info'] + "addons.xml")
             dom = minidom.parse(r)
             r.close()
 
             addons = dom.getElementsByTagName("addon")
-            zip = repo
-            if "xbmc-israel" in repo or "kodil" in repo:
-                zip += "repo/"
+            zip = '{0}{1}/'.format(repo['info'], repo['datadir'])
 
             for addon in addons:
                 try:
@@ -72,7 +68,7 @@ class Installer:
                 except Exception, e:
                     self.log("Error getting addon {0} info: {1}".format(id, str(e)), xbmc.LOGNOTICE)
         except:
-            self.log("Error getting Repo XML {0}: {1}".format(repo, traceback.format_exc()), xbmc.LOGERROR)
+            self.log("Error getting Repo XML {0}: {1}".format(repo['info'], traceback.format_exc()), xbmc.LOGERROR)
 
     def download(self, src, dest, lbl='', level=0):
         self.log('{0}downloading {1}'.format('.' * (level), src))

@@ -37,3 +37,6 @@ class packages:
 
     def getVersion(self):
         return self.data['version']
+
+    def getRepos(self):
+        return self.data['repos']

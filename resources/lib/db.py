@@ -2,6 +2,7 @@ from os import path
 from xbmc import translatePath
 from control import log
 from contextlib import contextmanager
+from time import sleep
 import sqlite3
 
 DB_DIR = translatePath("special://profile/Database")
@@ -18,7 +19,7 @@ def open_db(file=DB_FILE):
             break
         except:
             log('Failed to open DB')
-            time.sleep(1)
+            sleep(1)
     if not CONN:
         raise Exception('DB is locked')
     CONN.row_factory = sqlite3.Row

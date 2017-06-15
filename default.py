@@ -42,3 +42,8 @@ elif action == 'check':
     from resources.lib import version
 
     version.version().check_and_update()
+
+elif action == 'show_changelog':
+    from resources.lib import changelog
+
+    changelog.get()

@@ -78,3 +78,7 @@ msgstr "Check Version"
 msgctxt "#30051"
 msgid "Settings"
 msgstr "Settings"
+
+msgctxt "#30052"
+msgid "Change Log"
+msgstr "Change Log"

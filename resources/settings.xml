@@ -2,5 +2,6 @@
 <settings>
     <category label="30051">
         <setting type="action" label="30050" action="RunScript(program.DaburBuild, 0,action=check)"/>
+        <setting type="action" label="30052" action="RunScript(program.DaburBuild, 0,action=show_changelog)"/>
     </category>
 </settings>

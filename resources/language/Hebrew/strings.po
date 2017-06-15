@@ -78,3 +78,7 @@ msgstr "בדוק גירסה"
 msgctxt "#30051"
 msgid "Settings"
 msgstr "הגדרות"
+
+msgctxt "#30052"
+msgid "Change Log"
+msgstr "רשימת עדכונים"

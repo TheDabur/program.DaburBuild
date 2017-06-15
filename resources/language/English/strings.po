@@ -70,3 +70,11 @@ msgstr "There are no updates in the server[CR]Version number {0}[CR]Your device 
 msgctxt "#30042"
 msgid "Remind me later[CR]Please note if you choose No you will not be prompt again until next update"
 msgstr "Remind me later[CR]Please note if you choose No you will not be prompt again until next update"
+
+msgctxt "#30050"
+msgid "Check Version"
+msgstr "Check Version"
+
+msgctxt "#30051"
+msgid "Settings"
+msgstr "Settings"

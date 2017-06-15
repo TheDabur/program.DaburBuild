@@ -42,7 +42,7 @@ class menu:
                 self.addDirectoryItem(name, package['id'], 'download', '', '', desc)
 
         except URLError, e:
-            control.dialog.ok(control.addonName(), control.lang('30020'))
+            control.dialog.ok(control.addonName(), control.lang(30020))
 
         self.endDirectory()
 

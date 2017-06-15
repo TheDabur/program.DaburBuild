@@ -29,10 +29,16 @@ elif action == 'download' or action == "update":
 
     sure = True
     if action == 'download':
-        sure = control.yesnoDialog(control.lang(30030), "", "", control.addonInfo('name'), control.lang(30032), control.lang(30031))
+        sure = control.yesnoDialog(control.lang(30030), "", "", control.addonInfo('name'), control.lang(30032),
+                                   control.lang(30031))
 
     if sure:
         download.download().run(action, package_id)
 
 elif action == 'restore':
     pass
+
+elif action == 'check':
+    from resources.lib import version
+
+    version.version().check_and_update()

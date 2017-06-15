@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="30051">
+        <setting type="action" label="30050" action="RunScript(program.DaburBuild, 0,action=check)"/>
+    </category>
+</settings>

@@ -1,15 +1,13 @@
 import sys
 from time import sleep, time
-from resources.lib import control, packages, config
+from resources.lib import control, packages, config, version
 
+ver = version.version()
 conf = config.config()
 conf_json = conf.get()
-current_version = conf.getVersion()
-updated_at = conf.getUpdatedAt()
-update_next_check = conf.getUpdateNextCheck()
 
 # protect flood Github and make sure we do the check only when update_next_check is less then now
-if update_next_check > int(time()):
+if not ver.is_time_to_check():
     sys.exit(1)
 
 packages_instance = packages.packages()
@@ -19,7 +17,7 @@ conf_json['update_next_check'] = int(time()) + config.CONFIG_NEXT_UPDATE_INTERVA
 conf.save()
 
 # if the current version is the same as the latest we don't need to prompt update
-if current_version == package_latest_version:
+if not ver.check():
     sys.exit(1)
 
 # if skip_version is exists and its the same as the latest package version

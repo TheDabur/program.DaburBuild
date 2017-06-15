@@ -13,15 +13,19 @@ class version:
     def __init__(self):
         self.conf = config.config()
         self.conf_json = self.conf.get()
-        self.packages = packages.packages()
+        self.packages = []
 
     def check(self):
         return bool(self.get_current_version() != self.get_latest_version())
+
+    def is_time_to_check(self):
+        return bool(self.conf.getUpdateNextCheck() > int(time()))
 
     def get_current_version(self):
         return self.conf.getVersion()
 
     def get_latest_version(self):
+        self.packages = packages.packages()
         return self.packages.getVersion()
 
     def check_and_update(self):

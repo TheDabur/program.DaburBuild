@@ -13,6 +13,7 @@ import time
 CONFIG_JSON_FILE = "config.json"
 CONFIG_NEXT_UPDATE_INTERVAL = 172800  # 2 days
 
+
 class config:
     def __init__(self):
         try:
@@ -25,7 +26,9 @@ class config:
             with open(self.conf_file, 'r') as f:
                 self.conf = json.load(f)
         except:
-            self.conf = {"version": "None", "updated_at": int(time.time()), "update_next_check": (int(time.time()) + CONFIG_NEXT_UPDATE_INTERVAL), "package": "None", "addons": []}
+            self.conf = {"version": "None", "updated_at": int(time.time()),
+                         "update_next_check": (int(time.time()) + CONFIG_NEXT_UPDATE_INTERVAL), "package": "None",
+                         "addons": []}
             self.save()
 
     def get(self):

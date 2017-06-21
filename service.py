@@ -17,7 +17,7 @@ conf_json['update_next_check'] = int(time()) + config.CONFIG_NEXT_UPDATE_INTERVA
 conf.save()
 
 # first time install
-if ver.get_current_version() == "None":
+if str(ver.get_current_version()) == "None":
     sys.exit(1)
 
 # if the current version is the same as the latest we don't need to prompt update

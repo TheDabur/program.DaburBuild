@@ -17,7 +17,7 @@ conf_json['update_next_check'] = int(time()) + config.CONFIG_NEXT_UPDATE_INTERVA
 conf.save()
 
 # if the current version is the same as the latest we don't need to prompt update
-if not ver.check() and ver.get_current_version() is not None:
+if not ver.check() and ver.get_current_version() == "None":
     sys.exit(1)
 
 # if skip_version is exists and its the same as the latest package version

@@ -19,7 +19,7 @@ class version:
         return bool(self.get_current_version() != self.get_latest_version())
 
     def is_time_to_check(self):
-        return bool(self.conf.getUpdateNextCheck() > int(time()))
+        return bool(self.conf.getUpdateNextCheck() < int(time()))
 
     def get_current_version(self):
         return self.conf.getVersion()

@@ -16,8 +16,12 @@ package_latest_version = packages_instance.getVersion()
 conf_json['update_next_check'] = int(time()) + config.CONFIG_NEXT_UPDATE_INTERVAL
 conf.save()
 
+# first time install
+if ver.get_current_version() == "None":
+    sys.exit(1)
+
 # if the current version is the same as the latest we don't need to prompt update
-if not ver.check() and ver.get_current_version() == "None":
+if not ver.check():
     sys.exit(1)
 
 # if skip_version is exists and its the same as the latest package version

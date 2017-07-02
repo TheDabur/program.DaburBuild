@@ -102,7 +102,7 @@ class download:
             skin = settings['lookandfeel.skin']
         except:
             # skin = "skin.eminence.2.mod"
-            skin = "skin.estuary"
+            skin = "skin.titan.heb"
 
         rpc.run("Settings.SetSettingValue", {"setting": "locale.language", "value": "English"})
         rpc.run("Settings.SetSettingValue", {"setting": "lookandfeel.font", "value": "Arial"})

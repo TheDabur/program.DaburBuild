@@ -1,2 +1,8 @@
+[B]1.0.1[/B]
+- Change subtitles font size to 32
+- Removed Hebrew Dubbed movies widget from home
+- Removed System info widget from home
+- Add Flixnet video addon
+
 [B]1.0.0[/B]
 - Initial Release
